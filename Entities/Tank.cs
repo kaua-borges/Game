@@ -17,6 +17,7 @@ namespace Game.Entities
             ArmorRating = armorRating;
         }
 
+        //golpe com escudo baseado no tamanho da defesa
         public int ShieldBash()
         {
             switch (ShieldPower)
@@ -35,11 +36,13 @@ namespace Game.Entities
             }
         }
 
+        //Protege um pouco do dano levado pelo aliado.
         public int ProtectAlly(int DamageTakenByAlly)
         {
             switch (ArmorRating)
             {
                 case Level.Nivel1:
+                    //se der negativo a protecao do escudo é maior, retorno zero, se der positivo o escudo nao conteu o dano entao esse dano volta para o tank
                     int result = (DamageTakenByAlly - 300 <= 0) ? (0) : (DamageTakenByAlly - 300);
                     return result;
 
@@ -53,6 +56,11 @@ namespace Game.Entities
                 default:
                     return 0;
             }
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"level of shield:{ShieldPower.ToString()}, level of armor: {ArmorRating.ToString()}";
         }
     }
 }
