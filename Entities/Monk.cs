@@ -10,14 +10,16 @@ namespace Game.Entities
         public Level Prayer { get; set; }
         public Level Revenge { get; set; }
 
-        //O monge nao possui dano de ataque
+        
+
+        //The monk has no attack damage
         public Monk(string name, int defense, Level prayer, Level revenge, int lifePoints) : base(name, lifePoints, 0, defense)
         {
             Prayer = prayer;
             Revenge = revenge;
         }
 
-        //Habilidade que pega 20% do dano recebido pelo monge e devolve como dano para o inimigo dependendo do nivel de Revenge.
+        //An ability that takes 20% of the damage received by the monk and returns it as damage to the enemy, depending on the level of Revenge.
         public int Avenged(int damageTaken)
         {
             switch(Revenge)
@@ -36,7 +38,7 @@ namespace Game.Entities
             }
         }
 
-        //Habilidade que pega 20% do dano recebido pelo usuario e devolve como cura dependendo do nivel de Prayer.
+        ////An ability that takes 20% of the damage received by the user and returns it as healing, depending on the Prayer level.
         public int ToPray(int DamageTakenByAlly)
         {
             switch (Prayer)
