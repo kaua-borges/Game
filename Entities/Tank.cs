@@ -1,6 +1,7 @@
 ﻿using Game.Enums;
 using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace Game.Entities
@@ -29,6 +30,26 @@ namespace Game.Entities
                 case Level.Nivel3:
                     return (Defense * 3) + ((int)ShieldPower * 3);
 
+                default:
+                    return 0;
+            }
+        }
+
+        public int ProtectAlly(int DamageTakenByAlly)
+        {
+            switch (ArmorRating)
+            {
+                case Level.Nivel1:
+                    int result = (DamageTakenByAlly - 300 <= 0) ? (0) : (DamageTakenByAlly - 300);
+                    return result;
+
+                case Level.Nivel2:
+                    int result0 = (DamageTakenByAlly - 400 <= 0) ? (0) : (DamageTakenByAlly - 400);
+                    return result0;
+                    
+                case Level.Nivel3:
+                    int result1 = (DamageTakenByAlly - 500 <= 0) ? (0) : (DamageTakenByAlly - 500);
+                    return result1;
                 default:
                     return 0;
             }
