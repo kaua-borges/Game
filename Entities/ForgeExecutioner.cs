@@ -8,15 +8,18 @@
 
             set
             {
-                _ragePoints = value;
                 if (value < 0)
                 {
                     throw new ArgumentException("Rage points do not have negatives values.");
                 }
+
+                _ragePoints = value;
             }
         }
-
+        
         private int _ragePoints;
+
+        private const int MinRageforCrushingBlow = 200;
 
         public ForgeExecutioner(string name) : base(name, 3000, 2000, 1000, 20)
         {
@@ -31,6 +34,11 @@
 
         public int CrushingBlow()
         {
+            if(RagePoints < MinRageforCrushingBlow)
+            {
+                throw new InvalidOperationException($"Minimum rage required is {MinRageforCrushingBlow}, but current rage is {RagePoints}");
+            }
+
             int totalDamage = RagePoints - (int)(RagePoints * 0.40) + Attack;
             RagePoints = 0;
             return totalDamage;
@@ -40,5 +48,7 @@
         {
             return base.ToString() + $"rage point value:{RagePoints}";
         }
+
+        public bool CanUseCrushingBlow() => RagePoints >= MinRageforCrushingBlow;
     }
 }
