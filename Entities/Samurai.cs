@@ -14,9 +14,8 @@ namespace Game.Entities
             Dexterity = dexterity;
             BowDamage = 20;
         }
-        
 
-        //Quanto maior a dex maior o dano multiplicado pelo dano do arco.
+        //The higher the Dex, the greater the damage, which is then multiplied by the bow's damage.
         public int RangedAttack()
         {
             if(Dexterity <= 25)
@@ -26,19 +25,18 @@ namespace Game.Entities
 
             else
             {
-                //A dex passando de 25 o multiplicador do dano trava em 40
+                //Once Dex exceeds 25, the damage multiplier caps at 40
                 return (BowDamage * 40);
             }
         }
 
-
-        //O ataque com espada eh o ataque mais 50% da dex.
+        //The sword attack is the base attack plus 50% of your DEX.
         public int MeleeAttack()
         {
             return Attack + ((int)(Dexterity * 0.50));
         }
 
-        //Aqui o ToString trata das propriedades especificas da classe.
+        //Here, ToString handles the class-specific properties.
         public override string ToString()
         {
             return base.ToString() + $"dexterity:{Dexterity}, bow damage:{BowDamage}";

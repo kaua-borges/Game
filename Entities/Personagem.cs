@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Game.Entities
 {
@@ -19,7 +20,7 @@ namespace Game.Entities
             Defense = defense;
         }
 
-        //Metodo ToString que mostra os dados padroes de todo personagem
+        //ToString method who show default data of all characters.
         public override string ToString()
         {
             return $"Name:{Name}, Life points:{LifePoints}, Attack:{Attack}, Defense:{Defense}";

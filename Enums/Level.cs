@@ -6,8 +6,8 @@ namespace Game.Enums
 {
     public enum Level
     {
-       Nivel1,
-       Nivel2,
-       Nivel3
+       Nivel1 = 1,
+       Nivel2 = 2,
+       Nivel3 = 3
     }
 }

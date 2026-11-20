@@ -6,5 +6,6 @@ namespace Game.Services
 {
     internal class BattleService
     {
+        //not implemented
     }
 }
