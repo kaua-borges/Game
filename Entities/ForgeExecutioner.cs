@@ -19,7 +19,7 @@
         
         private int _ragePoints;
 
-        private const int MinRageforCrushingBlow = 200;
+        private const int MinRageForCrushingBlow = 200;
 
         public ForgeExecutioner(string name) : base(name, 3000, 2000, 1000, 20)
         {
@@ -34,9 +34,9 @@
 
         public int CrushingBlow()
         {
-            if(RagePoints < MinRageforCrushingBlow)
+            if(RagePoints < MinRageForCrushingBlow)
             {
-                throw new InvalidOperationException($"Minimum rage required is {MinRageforCrushingBlow}, but current rage is {RagePoints}");
+                throw new InvalidOperationException($"Minimum rage required is {MinRageForCrushingBlow}, but current rage is {RagePoints}");
             }
 
             int totalDamage = RagePoints - (int)(RagePoints * 0.40) + Attack;
@@ -49,6 +49,6 @@
             return base.ToString() + $"rage point value:{RagePoints}";
         }
 
-        public bool CanUseCrushingBlow() => RagePoints >= MinRageforCrushingBlow;
+        public bool CanUseCrushingBlow() => RagePoints >= MinRageForCrushingBlow;
     }
 }

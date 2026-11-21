@@ -23,7 +23,7 @@ namespace Game.Entities
         //ToString method who show default data of all characters.
         public override string ToString()
         {
-            return $"Name:{Name}, Life points:{LifePoints}, Attack:{Attack}, Defense:{Defense}";
+            return $"Name:{Name}, Life points:{LifePoints}, Attack:{Attack}, Defense:{Defense} ";
         }
 
 
