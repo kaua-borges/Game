@@ -19,5 +19,10 @@ namespace Game.Entities
                 _manaPoints = value;
             }
         }
+
+        public DarkMage(string name) : base(name, 1500, 1800, 300, 1500)
+        {
+            ManaPoints = 0;
+        }
     }
 }
