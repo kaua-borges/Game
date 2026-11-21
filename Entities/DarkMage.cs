@@ -13,7 +13,7 @@ namespace Game.Entities
             {
                 if(value < 0)
                 {
-                    throw new InvalidOperationException("Mana points don't be negative.");
+                    throw new ArgumentException("Mana points don't be negative.");
                 }
 
                 _manaPoints = value;
@@ -22,7 +22,7 @@ namespace Game.Entities
 
         public DarkMage(string name) : base(name, 1500, 1800, 300, 1500)
         {
-            ManaPoints = 0;
+            ManaPoints = 1000;
         }
     }
 }
