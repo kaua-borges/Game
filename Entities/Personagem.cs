@@ -25,8 +25,6 @@ namespace Game.Entities
         {
             return $"Name:{Name}, Life points:{LifePoints}, Attack:{Attack}, Defense:{Defense} ";
         }
-
-
-       
+        
     }
 }

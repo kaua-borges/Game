@@ -25,5 +25,17 @@ namespace Game.Entities
         {
             return $"name:{Name}, points of life:{LifePoints}, attack:{Attack}, defense:{Defense}, magic defense:{MagicDefense}";
         }
+
+        public bool HasAliveEnemies()
+        {
+            if(LifePoints <= 0)
+            {
+                Console.WriteLine($"{Name} don't has enough life.");
+                return false;
+            }
+
+            bool HasEnoughLife = LifePoints > 0;
+            return HasEnoughLife;
+        }
     }
 }

@@ -1,8 +1,4 @@
 ﻿using Game.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Game.Entities
 {
     internal class Monk : Personagem
